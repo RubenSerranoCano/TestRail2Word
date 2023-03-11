@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TestRail2Word:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/model/TestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/model/TestCaseStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/model/TestRailVersions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" afterDir="false" />
+    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TestRail2Word_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/RSC-1/IdeaProjects/TestRail2Word/src/main/java/org/testrail2word/model"
+    "last_opened_file_path": "E:/Projects/TestRail2WordGUI/docx4j-community-11.4.9/docx4j-openxml-objects-sml-11.4.9.jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -97,6 +101,19 @@
       <option name="presentableId" value="Default" />
       <updated>1678462765204</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1678480191100</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678480191100</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor" />
   </component>
 </project>

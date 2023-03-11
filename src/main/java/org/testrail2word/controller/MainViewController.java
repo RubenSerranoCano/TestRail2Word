@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testrail2word.model.TestCase;
 import org.testrail2word.model.TestCaseStep;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ public class MainViewController {
     private static WebDriver driver;
     private static TestCase testCase;
     private String outputPath;
+    private int editValueIndex;
+
 
     public void print(List<String> testCasesUrls, String testRailVersion) {
         driver = new ChromeDriver();
@@ -132,5 +135,71 @@ public class MainViewController {
             throw new RuntimeException(e);
         }
         return wordPackage;
+    }
+
+
+    public void add(JButton addButton, DefaultListModel<String> testCasesUrls, JTextField testCaseUrlTextField, JList<String> testCasesUrlJList) {
+        if (addButton.getText().equals("Apply")) {
+            addButton.setText("Add");
+            testCasesUrls.add(editValueIndex, testCaseUrlTextField.getText());
+        } else {
+            testCasesUrls.addElement(testCaseUrlTextField.getText());
+        }
+
+        testCasesUrlJList.setModel(testCasesUrls);
+        addButton.setEnabled(false);
+        testCaseUrlTextField.setText("");
+    }
+
+    public void edit(JList<String> testCasesUrlJList, DefaultListModel<String> testCasesUrls, JTextField testCaseUrlTextField, JButton addButton) {
+        editValueIndex = testCasesUrlJList.getSelectedIndex();
+        String selectedUrl = testCasesUrlJList.getSelectedValue();
+
+        testCasesUrls.remove(editValueIndex);
+        testCasesUrlJList.setModel(testCasesUrls);
+        testCaseUrlTextField.setText(selectedUrl);
+        addButton.setText("Apply");
+    }
+
+    public void setButtonStateOnListSelection(JTextField testCaseUrlTextField, JList<String> testCasesUrlJList, JButton editButton, JButton deleteButton, JButton printButton) {
+        if (testCaseUrlTextField.getText().isEmpty()) {
+            editButton.setEnabled(true);
+        }
+        deleteButton.setEnabled(true);
+        printButton.setEnabled(true);
+
+        if (testCasesUrlJList.getSelectedValuesList().size() > 1) {
+            editButton.setEnabled(false);
+        }
+
+        if (testCasesUrlJList.getSelectedValuesList().size() == 0) {
+            editButton.setEnabled(false);
+            deleteButton.setEnabled(false);
+            printButton.setEnabled(false);
+        }
+    }
+
+    public void chooseFile(JPanel jPanel, JTextField outputPathTextField) {
+        final JFileChooser fileChooser = new JFileChooser(".");
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        fileChooser.showOpenDialog(jPanel);
+        if (fileChooser.getSelectedFile() != null) {
+            outputPathTextField.setText(String.valueOf(fileChooser.getSelectedFile()));
+            this.outputPath = String.valueOf(fileChooser.getSelectedFile());
+        }
+    }
+
+    public void setButtonStateOnUrlInput(JTextField testCaseUrlTextField, JButton editButton, JButton addButton) {
+        if (!testCaseUrlTextField.getText().isEmpty()) {
+            editButton.setEnabled(false);
+            addButton.setEnabled(true);
+        }
+    }
+
+    public void deleteSelection(JList<String> testCasesUrlJList, DefaultListModel<String> testCasesUrls) {
+        int[] selectedIndices = testCasesUrlJList.getSelectedIndices();
+        for (int i = selectedIndices.length-1; i >=0; i--) {
+            testCasesUrls.removeElementAt(selectedIndices[i]);
+        }
     }
 }

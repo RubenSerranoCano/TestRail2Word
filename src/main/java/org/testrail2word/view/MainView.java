@@ -13,21 +13,17 @@ import java.awt.event.ActionListener;
 
 public class MainView extends JFrame {
 
-    private static MainView instance;
-
-    private javax.swing.JPanel jPanel;
+    private JPanel jPanel;
     private JButton printButton;
     private JTextField testCaseUrlTextField;
-    private JComboBox versionComboBox;
+    private JComboBox<String> versionComboBox;
     private JButton chooseFileButton;
     private JTextField outputPathTextField;
     private JLabel testRailVersionLabel;
     private JLabel destinationFolderLabel;
     private JLabel testCasesUrlsLabel;
     private JList<String> testCasesUrlJList;
-
     private final DefaultListModel<String> testCasesUrls = new DefaultListModel<>();
-
     private JButton addButton;
     private JButton editButton;
     private JButton deleteButton;
@@ -40,9 +36,11 @@ public class MainView extends JFrame {
         this.pack();
         this.setBounds(0, 0, 800, 800);
         this.setLocationRelativeTo(null);
-        this.testRailVersionLabel.setFont(new Font("Default", Font.PLAIN, 22));
-        this.destinationFolderLabel.setFont(new Font("Default", Font.PLAIN, 22));
-        this.testCasesUrlsLabel.setFont(new Font("Default", Font.PLAIN, 22));
+        jPanel.setBackground(new Color(230,242,255));
+
+        this.testRailVersionLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
+        this.destinationFolderLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
+        this.testCasesUrlsLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
 
         this.versionComboBox.setFont(new Font("Default", Font.PLAIN, 16));
         this.chooseFileButton.setFont(new Font("Default", Font.PLAIN, 16));
@@ -55,6 +53,14 @@ public class MainView extends JFrame {
         this.testCaseUrlTextField.setFont(new Font("Default", Font.PLAIN, 16));
         this.testCasesUrlJList.setFont(new Font("Default", Font.PLAIN, 16));
 
+        this.versionComboBox.setBackground(Color.white);
+        this.chooseFileButton.setBackground(Color.white);
+        this.addButton.setBackground(Color.white);
+        this.printButton.setBackground(Color.white);
+        this.editButton.setBackground(Color.white);
+        this.deleteButton.setBackground(Color.white);
+
+        this.addButton.setEnabled(false);
         this.editButton.setEnabled(false);
         this.deleteButton.setEnabled(false);
         this.printButton.setEnabled(false);
@@ -92,55 +98,28 @@ public class MainView extends JFrame {
         testCasesUrlJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                if (testCaseUrlTextField.getText().isEmpty()) {
-                    editButton.setEnabled(true);
-                }
-                deleteButton.setEnabled(true);
-                printButton.setEnabled(true)
-                ;
-                if (testCasesUrlJList.getSelectedValuesList().size() > 1) {
-                    editButton.setEnabled(false);
-                }
-
-                if (testCasesUrlJList.getSelectedValuesList().size() == 0) {
-                    editButton.setEnabled(false);
-                    deleteButton.setEnabled(false);
-                    printButton.setEnabled(false);
-                }
+                mainViewController.setButtonStateOnListSelection(testCaseUrlTextField, testCasesUrlJList, editButton, deleteButton, printButton);
             }
         });
 
         chooseFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                final JFileChooser fileChooser = new JFileChooser(".");
-                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                fileChooser.showOpenDialog(instance);
-                if (fileChooser.getSelectedFile() != null) {
-                    outputPathTextField.setText(String.valueOf(fileChooser.getSelectedFile()));
-                    mainViewController.setOutputPath(String.valueOf(fileChooser.getSelectedFile()));
-                }
+                mainViewController.chooseFile(jPanel, outputPathTextField);
             }
         });
 
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                testCasesUrls.addElement(testCaseUrlTextField.getText());
-                testCasesUrlJList.setModel(testCasesUrls);
-                testCaseUrlTextField.setText("");
+                mainViewController.add(addButton, testCasesUrls, testCaseUrlTextField, testCasesUrlJList);
             }
         });
 
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int selectionIndex = testCasesUrlJList.getSelectedIndex();
-                String selectedUrl = testCasesUrlJList.getSelectedValue();
-
-                testCasesUrls.remove(selectionIndex);
-                testCasesUrlJList.setModel(testCasesUrls);
-                testCaseUrlTextField.setText(selectedUrl);
+                mainViewController.edit(testCasesUrlJList, testCasesUrls, testCaseUrlTextField, addButton);
             }
         });
 
@@ -161,16 +140,14 @@ public class MainView extends JFrame {
             }
 
             public void change() {
-                if (!testCaseUrlTextField.getText().isEmpty()) {
-                    editButton.setEnabled(false);
-                }
+                mainViewController.setButtonStateOnUrlInput(testCaseUrlTextField, editButton, addButton);
             }
         });
 
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                testCasesUrls.remove(testCasesUrlJList.getSelectedIndex());
+                mainViewController.deleteSelection(testCasesUrlJList, testCasesUrls);
             }
         });
     }
