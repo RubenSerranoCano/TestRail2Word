@@ -1,47 +1,43 @@
 Manifest-Version: 1.0
 Main-Class: org.testrail2word.Main
-Class-Path: reactive-streams-1.0.3.jar guava-31.0.1-jre.jar bcpkix-jdk15
- on-1.64.jar netty-transport-native-epoll-4.1.87.Final.jar opentelemetry
- -exporter-logging-1.22.0.jar listenablefuture-9999.0-empty-to-avoid-con
- flict-with-guava.jar serializer-2.7.2.jar mbassador-1.2.4.2.jar docker-
- java-transport-3.2.14.jar opentelemetry-sdk-extension-autoconfigure-1.2
- 2.0-alpha.jar commons-codec-1.11.jar docker-java-3.2.14.jar netty-trans
- port-native-kqueue-4.1.60.Final-osx-x86_64.jar dec-0.1.2.jar netty-comm
- on-4.1.87.Final.jar selenium-devtools-v85-4.8.1.jar selenium-http-4.8.1
- .jar opentelemetry-sdk-1.22.0.jar log4j-1.2.17.jar selenium-devtools-v1
- 08-4.8.1.jar netty-codec-4.1.87.Final.jar selenium-manager-4.8.1.jar se
- lenium-edge-driver-4.8.1.jar opentelemetry-sdk-metrics-1.22.0.jar check
- er-qual-3.12.0.jar opentelemetry-api-1.22.0.jar netty-resolver-4.1.87.F
- inal.jar selenium-safari-driver-4.8.1.jar avalon-framework-impl-4.3.1.j
- ar opentelemetry-semconv-1.22.0-alpha.jar selenium-java-4.8.1.jar opent
- elemetry-sdk-trace-1.22.0.jar xalan-2.7.2.jar stringtemplate-3.2.1.jar 
- docker-java-api-3.2.14.jar jackson-core-2.7.9.jar selenium-remote-drive
- r-4.8.1.jar netty-buffer-4.1.87.Final.jar selenium-api-4.8.1.jar error_
- prone_annotations-2.7.1.jar netty-transport-classes-kqueue-4.1.87.Final
- .jar opentelemetry-api-logs-1.22.0-alpha.jar httpcore5-h2-5.2.jar opent
- elemetry-sdk-extension-autoconfigure-spi-1.22.0.jar jcommander-1.82.jar
-  j2objc-annotations-1.3.jar netty-codec-http-4.1.87.Final.jar failsafe-
- 3.3.0.jar netty-reactive-streams-2.0.4.jar httpclient-4.5.6.jar avalon-
- framework-api-4.3.1.jar netty-transport-4.1.87.Final.jar jackson-annota
- tions-2.7.0.jar netty-transport-native-epoll-4.1.60.Final-linux-x86_64.
- jar jakarta.activation-1.2.2.jar netty-transport-classes-epoll-4.1.87.F
- inal.jar opentelemetry-sdk-logs-1.22.0-alpha.jar jaxb-svg11-1.0.2.jar c
- ommons-lang3-3.12.0.jar selenium-devtools-v110-4.8.1.jar failureaccess-
- 1.0.1.jar antlr-runtime-3.5.2.jar netty-transport-native-unix-common-4.
- 1.87.Final.jar jtoml-2.0.0.jar netty-transport-native-kqueue-4.1.87.Fin
- al.jar antlr-2.7.7.jar async-http-client-2.12.3.jar commons-exec-1.3.ja
- r selenium-chromium-driver-4.8.1.jar opentelemetry-sdk-common-1.22.0.ja
- r docker-java-core-3.2.14.jar netty-codec-socks-4.1.60.Final.jar docx4j
- -6.1.2.jar docker-java-transport-httpclient5-3.2.14.jar opentelemetry-c
- ontext-1.22.0.jar jna-5.12.1.jar selenium-chrome-driver-4.8.1.jar xmlgr
- aphics-commons-2.3.jar gson-2.10.1.jar wmf2svg-0.9.8.jar lorem-2.1.jar 
- auto-common-1.2.jar selenium-firefox-driver-4.8.1.jar async-http-client
- -netty-utils-2.12.3.jar auto-service-annotations-1.0.1.jar commons-io-2
- .5.jar netty-handler-proxy-4.1.60.Final.jar auto-service-1.0.1.jar webd
- rivermanager-5.3.2.jar selenium-ie-driver-4.8.1.jar httpclient5-5.2.1.j
- ar httpcore-4.4.10.jar netty-handler-4.1.87.Final.jar jsr305-3.0.2.jar 
- slf4j-log4j12-1.7.25.jar byte-buddy-1.12.22.jar bcprov-jdk15on-1.64.jar
-  commons-compress-1.12.jar jcl-over-slf4j-1.7.25.jar jackson-databind-2
- .7.9.4.jar slf4j-api-2.0.6.jar selenium-devtools-v109-4.8.1.jar seleniu
- m-support-4.8.1.jar selenium-json-4.8.1.jar httpcore5-5.2.jar
+Class-Path: error_prone_annotations-2.7.1.jar webdrivermanager-5.3.2.jar
+  selenium-manager-4.8.1.jar bcprov-jdk15on-1.64.jar opentelemetry-sdk-l
+ ogs-1.22.0-alpha.jar netty-reactive-streams-2.0.4.jar slf4j-api-2.0.6.j
+ ar auto-service-annotations-1.0.1.jar opentelemetry-sdk-trace-1.22.0.ja
+ r guava-31.0.1-jre.jar mbassador-1.2.4.2.jar gson-2.10.1.jar docker-jav
+ a-transport-httpclient5-3.2.14.jar antlr-2.7.7.jar opentelemetry-export
+ er-logging-1.22.0.jar commons-io-2.5.jar jaxb-svg11-1.0.2.jar jakarta.a
+ ctivation-1.2.2.jar selenium-http-4.8.1.jar selenium-api-4.8.1.jar open
+ telemetry-api-logs-1.22.0-alpha.jar netty-handler-4.1.87.Final.jar nett
+ y-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar netty-transport-n
+ ative-epoll-4.1.87.Final.jar jtoml-2.0.0.jar opentelemetry-context-1.22
+ .0.jar docker-java-transport-3.2.14.jar avalon-framework-api-4.3.1.jar 
+ opentelemetry-api-1.22.0.jar slf4j-log4j12-1.7.25.jar httpcore-4.4.10.j
+ ar opentelemetry-sdk-metrics-1.22.0.jar async-http-client-netty-utils-2
+ .12.3.jar opentelemetry-semconv-1.22.0-alpha.jar commons-codec-1.11.jar
+  commons-lang3-3.12.0.jar dec-0.1.2.jar auto-service-1.0.1.jar docker-j
+ ava-api-3.2.14.jar netty-codec-socks-4.1.60.Final.jar selenium-chromium
+ -driver-4.8.1.jar xalan-2.7.2.jar failsafe-3.3.0.jar byte-buddy-1.12.22
+ .jar xmlgraphics-commons-2.3.jar opentelemetry-sdk-1.22.0.jar selenium-
+ chrome-driver-4.8.1.jar opentelemetry-sdk-extension-autoconfigure-1.22.
+ 0-alpha.jar lorem-2.1.jar docker-java-core-3.2.14.jar jackson-databind-
+ 2.7.9.4.jar netty-resolver-4.1.87.Final.jar jcommander-1.82.jar httpcli
+ ent5-5.2.1.jar docx4j-6.1.2.jar auto-common-1.2.jar netty-transport-nat
+ ive-kqueue-4.1.87.Final.jar netty-transport-classes-epoll-4.1.87.Final.
+ jar netty-transport-4.1.87.Final.jar log4j-1.2.17.jar netty-handler-pro
+ xy-4.1.60.Final.jar netty-codec-4.1.87.Final.jar serializer-2.7.2.jar s
+ elenium-json-4.8.1.jar j2objc-annotations-1.3.jar netty-transport-class
+ es-kqueue-4.1.87.Final.jar netty-common-4.1.87.Final.jar jcl-over-slf4j
+ -1.7.25.jar listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.
+ jar httpcore5-5.2.jar docker-java-3.2.14.jar avalon-framework-impl-4.3.
+ 1.jar failureaccess-1.0.1.jar opentelemetry-sdk-extension-autoconfigure
+ -spi-1.22.0.jar selenium-remote-driver-4.8.1.jar netty-codec-http-4.1.8
+ 7.Final.jar jna-5.12.1.jar commons-exec-1.3.jar commons-compress-1.12.j
+ ar netty-transport-native-unix-common-4.1.87.Final.jar async-http-clien
+ t-2.12.3.jar netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar
+  wmf2svg-0.9.8.jar netty-buffer-4.1.87.Final.jar opentelemetry-sdk-comm
+ on-1.22.0.jar stringtemplate-3.2.1.jar jackson-annotations-2.7.0.jar ch
+ ecker-qual-3.12.0.jar bcpkix-jdk15on-1.64.jar jsr305-3.0.2.jar reactive
+ -streams-1.0.3.jar httpcore5-h2-5.2.jar jackson-core-2.7.9.jar httpclie
+ nt-4.5.6.jar antlr-runtime-3.5.2.jar
 

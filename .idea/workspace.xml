@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor">
+    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="Add icon">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/TestRail2Word_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TestRail2Word_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
@@ -55,8 +55,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "1286",
-    "last_opened_file_path": "E:/Projects/TestRail2Word/src/main/java/org/testrail2word/assets",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "226",
+    "last_opened_file_path": "C:/Users/RSC-1/IdeaProjects/SeleniumScrapper",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -117,12 +117,31 @@
       <option name="project" value="LOCAL" />
       <updated>1678550783064</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add icon">
+      <created>1678560275965</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678560275965</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor" />
+    <MESSAGE value="Add icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add icon" />
   </component>
 </project>

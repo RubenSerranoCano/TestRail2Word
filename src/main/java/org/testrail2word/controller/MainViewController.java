@@ -115,6 +115,7 @@ public class MainViewController {
             while (descriptionLine.hasNext()) {
                 mainDocumentPart.addParagraphOfText(descriptionLine.nextLine());
             }
+            mainDocumentPart.addParagraphOfText("");
         }
     }
 
