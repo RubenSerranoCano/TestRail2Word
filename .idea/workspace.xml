@@ -10,15 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TestRail2Word_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TestRail2Word_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TestRail2Word_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/Projects/TestRail2WordGUI/docx4j-community-11.4.9/docx4j-openxml-objects-sml-11.4.9.jar",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "1286",
+    "last_opened_file_path": "E:/Projects/TestRail2Word/src/main/java/org/testrail2word/assets",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -66,9 +65,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\TestRail2Word\src\main\java\org\testrail2word\assets" />
       <recent name="C:\Users\RSC-1\IdeaProjects\TestRail2Word\src\main\java\org\testrail2word\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\TestRail2Word\src\main\java\org\testrail2word\assets" />
+      <recent name="E:\Projects\TestRail2Word\src\main\java\org\testrail2word\view" />
       <recent name="C:\Users\RSC-1\IdeaProjects\TestRail2Word\src\main\java\org\testrail2word\views" />
     </key>
   </component>
@@ -108,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678480191100</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor">
+      <created>1678550783064</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678550783064</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
