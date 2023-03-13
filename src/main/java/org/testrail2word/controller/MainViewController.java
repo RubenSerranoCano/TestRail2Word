@@ -38,20 +38,20 @@ public class MainViewController {
             String testCaseTitleText;
             List<WebElement> testCaseNumbers;
             List<WebElement> testCaseDescriptions;
-
+            // TODO - Check if verions's web elements are different.
             switch (testRailVersion) {
                 case "v7.8.0 Early Access (1136)":
                     testCaseCodeText = driver.findElement(By.className("content-header-id")).getText();
                     testCaseTitleText = driver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
-                    testCaseNumbers = driver.findElements(By.xpath("//*[@id=\"content-inner\"]/div[8]/div/table/tbody/tr//div/span"));
-                    testCaseDescriptions = driver.findElements(By.xpath("//*[@id=\"content-inner\"]/div[8]/div/table/tbody/tr//td[2]/div[2]/div/p"));
+                    testCaseNumbers = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
+                    testCaseDescriptions = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]"));
                     break;
                 default:
                     // "v6.5.7.1000"
                     testCaseCodeText = driver.findElement(By.className("content-header-id")).getText();
                     testCaseTitleText = driver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
                     testCaseNumbers = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
-                    testCaseDescriptions = driver.findElements(By.xpath("//*[@id=\"content-inner\"]/div[4]/table/tbody/tr/td[2]/div[@class=\"markdown\"]"));
+                    testCaseDescriptions = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]"));
             }
 
             testCase = new TestCase(testCaseUrl, testCaseCodeText, testCaseTitleText, getTestCasesSteps(testCaseNumbers, testCaseDescriptions));

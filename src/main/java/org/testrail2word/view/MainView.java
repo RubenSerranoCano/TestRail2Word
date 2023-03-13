@@ -50,20 +50,20 @@ public class MainView extends JFrame {
         attributionHyperlink.setForeground(Color.BLUE.darker());
         attributionHyperlink.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        testRailVersionLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
-        destinationFolderLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
-        testCasesUrlsLabel.setFont(new Font("Calibri", Font.PLAIN, 22));
+        testRailVersionLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
+        destinationFolderLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
+        testCasesUrlsLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
 
-        versionComboBox.setFont(new Font("Default", Font.PLAIN, 16));
-        chooseFileButton.setFont(new Font("Default", Font.PLAIN, 16));
-        addButton.setFont(new Font("Default", Font.PLAIN, 16));
-        printButton.setFont(new Font("Default", Font.PLAIN, 16));
-        editButton.setFont(new Font("Default", Font.PLAIN, 16));
-        deleteButton.setFont(new Font("Default", Font.PLAIN, 16));
+        versionComboBox.setFont(new Font("Default", Font.PLAIN, 14));
+        chooseFileButton.setFont(new Font("Default", Font.PLAIN, 14));
+        addButton.setFont(new Font("Default", Font.PLAIN, 14));
+        printButton.setFont(new Font("Default", Font.PLAIN, 14));
+        editButton.setFont(new Font("Default", Font.PLAIN, 14));
+        deleteButton.setFont(new Font("Default", Font.PLAIN, 14));
 
-        outputPathTextField.setFont(new Font("Default", Font.PLAIN, 16));
-        testCaseUrlTextField.setFont(new Font("Default", Font.PLAIN, 16));
-        testCasesUrlJList.setFont(new Font("Default", Font.PLAIN, 16));
+        outputPathTextField.setFont(new Font("Default", Font.PLAIN, 14));
+        testCaseUrlTextField.setFont(new Font("Default", Font.PLAIN, 14));
+        testCasesUrlJList.setFont(new Font("Default", Font.PLAIN, 14));
 
         versionComboBox.setBackground(Color.white);
         chooseFileButton.setBackground(Color.white);
