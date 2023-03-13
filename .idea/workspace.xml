@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="Add icon">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="Changes: fix testrail web elements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,6 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;226&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/RSC-1/IdeaProjects/SeleniumScrapper&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678560275965</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changes: fix testrail web elements">
+      <created>1678694299438</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678694299438</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +136,17 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Changes:&#10;- GUI Style&#10;- View to Controller add and edit button refactor" />
     <MESSAGE value="Add icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add icon" />
+    <MESSAGE value="Changes: fix testrail web elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes: fix testrail web elements" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

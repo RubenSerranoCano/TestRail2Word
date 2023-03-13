@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testrail2word.model.TestCase;
 import org.testrail2word.model.TestCaseStep;
 
@@ -27,7 +28,9 @@ public class MainViewController {
 
 
     public void print(List<String> testCasesUrls, String testRailVersion) {
-        driver = new ChromeDriver();
+        ChromeOptions co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(co);
 
         for (String testCaseUrl : testCasesUrls) {
             driver.navigate().to(testCaseUrl);
@@ -82,7 +85,8 @@ public class MainViewController {
     }
 
     private String getTestCaseFileName(TestCase testCase) {
-        return testCase.getCode().concat(" - ").concat(testCase.getName()).concat(".docx");
+        // TODO - Remove characters unsupported by files such as: \ / : * ? " < > | on filename
+        return testCase.getCode().concat(" - ").concat(testCase.getName()).concat(".docx").replaceAll("", "");
     }
 
     private void waitForUserLogin() {
@@ -199,7 +203,7 @@ public class MainViewController {
 
     public void deleteSelection(JList<String> testCasesUrlJList, DefaultListModel<String> testCasesUrls) {
         int[] selectedIndices = testCasesUrlJList.getSelectedIndices();
-        for (int i = selectedIndices.length-1; i >=0; i--) {
+        for (int i = selectedIndices.length - 1; i >= 0; i--) {
             testCasesUrls.removeElementAt(selectedIndices[i]);
         }
     }
