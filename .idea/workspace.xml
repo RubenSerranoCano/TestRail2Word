@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="remove testrail version selector&#10;add browser selector">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/assets/clipboard.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
     </list>

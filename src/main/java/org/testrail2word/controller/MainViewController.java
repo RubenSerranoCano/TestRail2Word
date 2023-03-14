@@ -41,7 +41,9 @@ public class MainViewController {
             String testCaseCodeText = webDriver.findElement(By.className("content-header-id")).getText();
             String testCaseTitleText = webDriver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
             List<WebElement> testCaseNumbers = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
-            List<WebElement> testCaseDescriptions = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]"));
+            // 7.8: //*[@id="content-inner"]//td[@class="step-content"]/div[@class="hidden-vertical"]//div[contains(concat(' ', @class, ' '), ' markdown')]
+            // 6: //*[@id="content-inner"]//td[@class="step-content"]/div[@class="markdown"]
+            List<WebElement> testCaseDescriptions = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"hidden-vertical\"]//div[contains(concat(' ', @class, ' '), ' markdown')]"));
 
             testCase = new TestCase(testCaseUrl, testCaseCodeText, testCaseTitleText, getTestCasesSteps(testCaseNumbers, testCaseDescriptions));
 
@@ -75,7 +77,7 @@ public class MainViewController {
     }
 
     private File getOutputFilePath(String outputPath, String fileName) {
-        outputPath =  isOutputPathMissing() ? "/TestRail2Word reports" : outputPath;
+        outputPath = isOutputPathMissing() ? "/TestRail2Word reports" : outputPath;
         File filePath = new File(outputPath);
         if (!filePath.exists()) {
             filePath.mkdir();
@@ -90,8 +92,7 @@ public class MainViewController {
     }
 
     private String getTestCaseFileName(TestCase testCase) {
-        // TODO - Remove characters unsupported by files such as: \ / : * ? " < > | on filename
-        return testCase.getCode().concat(" - ").concat(testCase.getName()).concat(".docx").replaceAll("", "");
+        return testCase.getCode().concat(" - ").concat(testCase.getName()).concat(".docx").replaceAll("[^-a-zA-Z0-9() .]", "");
     }
 
     private void waitForUserLogin() {
