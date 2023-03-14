@@ -74,16 +74,19 @@ public class MainViewController {
         this.outputPath = outputPath;
     }
 
-    private String getOutputPath() {
-        return this.outputPath;
+    private File getOutputFilePath(String outputPath, String fileName) {
+        outputPath =  isOutputPathMissing() ? "/TestRail2Word reports" : outputPath;
+        File filePath = new File(outputPath);
+        if (!filePath.exists()) {
+            filePath.mkdir();
+        }
+        String path = new File(outputPath.concat("\\").concat(fileName)).getPath();
+        System.out.println("Output path: " + path);
+        return new File(path);
     }
 
-    private File getOutputFilePath(String outputPath, String fileName) {
-        System.out.println("Output path: " + outputPath);
-        outputPath = outputPath == null || outputPath.isEmpty() ? "." : outputPath;
-        File file = new File(outputPath.concat("\\").concat(fileName));
-        String path = file.getPath();
-        return new File(path);
+    private boolean isOutputPathMissing() {
+        return outputPath == null || outputPath.isEmpty();
     }
 
     private String getTestCaseFileName(TestCase testCase) {
@@ -187,7 +190,7 @@ public class MainViewController {
     }
 
     public void chooseFile(JPanel jPanel, JTextField outputPathTextField) {
-        final JFileChooser fileChooser = new JFileChooser(".");
+        final JFileChooser fileChooser = new JFileChooser(isOutputPathMissing() ? "." : outputPath);
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         fileChooser.showOpenDialog(jPanel);
         if (fileChooser.getSelectedFile() != null) {

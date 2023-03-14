@@ -9,12 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="in progress: regex to remove special characters from output file">
+    <list default="true" id="c3a35914-231c-429c-9b86-57d166af3aa0" name="Changes" comment="remove testrail version selector&#10;add browser selector">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/model/TestRailVersions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/testrail2word/view/MainView.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678724648602</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remove testrail version selector&#10;add browser selector">
+      <created>1678789967546</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678789967546</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,7 +152,8 @@
     <MESSAGE value="Add icon" />
     <MESSAGE value="Changes: fix testrail web elements" />
     <MESSAGE value="in progress: regex to remove special characters from output file" />
-    <option name="LAST_COMMIT_MESSAGE" value="in progress: regex to remove special characters from output file" />
+    <MESSAGE value="remove testrail version selector&#10;add browser selector" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove testrail version selector&#10;add browser selector" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
