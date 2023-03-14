@@ -35,8 +35,9 @@
         </constraints>
         <properties>
           <model>
-            <item value="v6.5.7.1000"/>
-            <item value="v7.8.0 Early Access (1136)"/>
+            <item value="Chrome"/>
+            <item value="Firefox"/>
+            <item value="Edge"/>
           </model>
         </properties>
       </component>
@@ -45,7 +46,7 @@
           <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="TestRail version"/>
+          <text value="Browser"/>
         </properties>
       </component>
       <hspacer id="dfb99">

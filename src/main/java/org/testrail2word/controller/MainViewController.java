@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testrail2word.model.TestCase;
 import org.testrail2word.model.TestCaseStep;
 
@@ -21,41 +23,25 @@ import java.util.concurrent.TimeUnit;
 
 public class MainViewController {
 
-    private static WebDriver driver;
+    private static WebDriver webDriver;
     private static TestCase testCase;
     private String outputPath;
     private int editValueIndex;
 
 
-    public void print(List<String> testCasesUrls, String testRailVersion) {
-        ChromeOptions co = new ChromeOptions();
-        co.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(co);
+    public void print(List<String> testCasesUrls, String browser) {
+
+        setWebDriverBrowser(browser);
 
         for (String testCaseUrl : testCasesUrls) {
-            driver.navigate().to(testCaseUrl);
+            webDriver.navigate().to(testCaseUrl);
 
             waitForUserLogin();
 
-            String testCaseCodeText;
-            String testCaseTitleText;
-            List<WebElement> testCaseNumbers;
-            List<WebElement> testCaseDescriptions;
-            // TODO - Check if verions's web elements are different.
-            switch (testRailVersion) {
-                case "v7.8.0 Early Access (1136)":
-                    testCaseCodeText = driver.findElement(By.className("content-header-id")).getText();
-                    testCaseTitleText = driver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
-                    testCaseNumbers = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
-                    testCaseDescriptions = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]"));
-                    break;
-                default:
-                    // "v6.5.7.1000"
-                    testCaseCodeText = driver.findElement(By.className("content-header-id")).getText();
-                    testCaseTitleText = driver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
-                    testCaseNumbers = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
-                    testCaseDescriptions = driver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]"));
-            }
+            String testCaseCodeText = webDriver.findElement(By.className("content-header-id")).getText();
+            String testCaseTitleText = webDriver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
+            List<WebElement> testCaseNumbers = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
+            List<WebElement> testCaseDescriptions = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]"));
 
             testCase = new TestCase(testCaseUrl, testCaseCodeText, testCaseTitleText, getTestCasesSteps(testCaseNumbers, testCaseDescriptions));
 
@@ -67,7 +53,21 @@ public class MainViewController {
             saveDocxFile(wordPackage, getOutputFilePath(this.outputPath, getTestCaseFileName(testCase)));
         }
 
-        driver.close();
+        webDriver.close();
+    }
+
+    public void setWebDriverBrowser(String browser) {
+        switch (browser) {
+            case "Firefox":
+                webDriver = new FirefoxDriver();
+                break;
+            case "Edge":
+                webDriver = new EdgeDriver();
+                break;
+            default:
+                ChromeOptions co = new ChromeOptions().addArguments("--remote-allow-origins=*");
+                webDriver = new ChromeDriver(co);
+        }
     }
 
     public void setOutputPath(String outputPath) {
@@ -79,6 +79,8 @@ public class MainViewController {
     }
 
     private File getOutputFilePath(String outputPath, String fileName) {
+        System.out.println("Output path: " + outputPath);
+        outputPath = outputPath == null || outputPath.isEmpty() ? "." : outputPath;
         File file = new File(outputPath.concat("\\").concat(fileName));
         String path = file.getPath();
         return new File(path);
@@ -90,7 +92,7 @@ public class MainViewController {
     }
 
     private void waitForUserLogin() {
-        driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
     }
 
     private static List<TestCaseStep> getTestCasesSteps(List<WebElement> testCaseNumbers, List<WebElement> testCaseDescriptions) {
