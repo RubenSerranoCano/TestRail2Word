@@ -2,7 +2,6 @@ package org.testrail2word.view;
 
 import org.testrail2word.controller.MainViewController;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -13,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -23,10 +21,10 @@ public class MainView extends JFrame {
     private JPanel jPanel;
     private JButton printButton;
     private JTextField testCaseUrlTextField;
-    private JComboBox<String> versionComboBox;
+    private JComboBox<String> browserVersionComboBox;
     private JButton chooseFileButton;
     private JTextField outputPathTextField;
-    private JLabel testRailVersionLabel;
+    private JLabel browserlVersionLabel;
     private JLabel destinationFolderLabel;
     private JLabel testCasesUrlsLabel;
     private JList<String> testCasesUrlJList;
@@ -35,6 +33,9 @@ public class MainView extends JFrame {
     private JButton editButton;
     private JButton deleteButton;
     private JLabel attributionHyperlink;
+    private JComboBox testRailVersionComboBox;
+    private JLabel testRailVersionLabel;
+    private JLabel browserVersionLabel;
 
     private MainView(String appTitle) {
         super(appTitle);
@@ -45,16 +46,18 @@ public class MainView extends JFrame {
         this.setBounds(0, 0, 800, 800);
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon("src/main/java/org/testrail2word/assets/clipboard.png").getImage());
-        jPanel.setBackground(new Color(230,242,255));
+        jPanel.setBackground(new Color(230, 242, 255));
 
         attributionHyperlink.setForeground(Color.BLUE.darker());
         attributionHyperlink.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         testRailVersionLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
+        browserVersionLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
         destinationFolderLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
         testCasesUrlsLabel.setFont(new Font("Calibri", Font.PLAIN, 18));
 
-        versionComboBox.setFont(new Font("Default", Font.PLAIN, 14));
+        testRailVersionComboBox.setFont(new Font("Default", Font.PLAIN, 14));
+        browserVersionComboBox.setFont(new Font("Default", Font.PLAIN, 14));
         chooseFileButton.setFont(new Font("Default", Font.PLAIN, 14));
         addButton.setFont(new Font("Default", Font.PLAIN, 14));
         printButton.setFont(new Font("Default", Font.PLAIN, 14));
@@ -65,7 +68,8 @@ public class MainView extends JFrame {
         testCaseUrlTextField.setFont(new Font("Default", Font.PLAIN, 14));
         testCasesUrlJList.setFont(new Font("Default", Font.PLAIN, 14));
 
-        versionComboBox.setBackground(Color.white);
+        testRailVersionComboBox.setBackground(Color.white);
+        browserVersionComboBox.setBackground(Color.white);
         chooseFileButton.setBackground(Color.white);
         addButton.setBackground(Color.white);
         printButton.setBackground(Color.white);
@@ -82,7 +86,7 @@ public class MainView extends JFrame {
         printButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainViewController.print(testCasesUrlJList.getSelectedValuesList(), String.valueOf(versionComboBox.getSelectedItem()));
+                mainViewController.print(testCasesUrlJList.getSelectedValuesList(), String.valueOf(browserVersionComboBox.getSelectedItem()), String.valueOf(testRailVersionComboBox.getSelectedItem()));
             }
         });
 

@@ -13,6 +13,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testrail2word.model.TestCase;
 import org.testrail2word.model.TestCaseStep;
+import org.testrail2word.model.TestCaseWebElements;
 
 import javax.swing.*;
 import java.io.File;
@@ -24,12 +25,11 @@ import java.util.concurrent.TimeUnit;
 public class MainViewController {
 
     private static WebDriver webDriver;
-    private static TestCase testCase;
     private String outputPath;
     private int editValueIndex;
 
 
-    public void print(List<String> testCasesUrls, String browser) {
+    public void print(List<String> testCasesUrls, String browser, String testRailVersion) {
 
         setWebDriverBrowser(browser);
 
@@ -38,14 +38,12 @@ public class MainViewController {
 
             waitForUserLogin();
 
-            String testCaseCodeText = webDriver.findElement(By.className("content-header-id")).getText();
-            String testCaseTitleText = webDriver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")).getText().trim();
-            List<WebElement> testCaseNumbers = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span"));
-            // 7.8: //*[@id="content-inner"]//td[@class="step-content"]/div[@class="hidden-vertical"]//div[contains(concat(' ', @class, ' '), ' markdown')]
-            // 6: //*[@id="content-inner"]//td[@class="step-content"]/div[@class="markdown"]
-            List<WebElement> testCaseDescriptions = webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"hidden-vertical\"]//div[contains(concat(' ', @class, ' '), ' markdown')]"));
+            TestCaseWebElements webElements = getTestRailWebElements(testRailVersion);
 
-            testCase = new TestCase(testCaseUrl, testCaseCodeText, testCaseTitleText, getTestCasesSteps(testCaseNumbers, testCaseDescriptions));
+            TestCase testCase = new TestCase(testCaseUrl,
+                    webElements.getTestCaseCodeText(),
+                    webElements.getTestCaseTitleText(),
+                    getTestCasesSteps(webElements.getTestCaseNumbers(), webElements.getTestCaseDescriptions()));
 
             WordprocessingMLPackage wordPackage = getWordprocessingMLPackage();
             MainDocumentPart mainDocumentPart = wordPackage.getMainDocumentPart();
@@ -56,6 +54,25 @@ public class MainViewController {
         }
 
         webDriver.close();
+    }
+
+    public TestCaseWebElements getTestRailWebElements(String testRailVersion) {
+        TestCaseWebElements testCaseWebElements = new TestCaseWebElements();
+        switch (testRailVersion) {
+            case "v7.8.0 Early Access (1136)":
+                testCaseWebElements.setTestCaseCode(webDriver.findElement(By.className("content-header-id")));
+                testCaseWebElements.setTestCaseTitle(webDriver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")));
+                testCaseWebElements.setTestCaseNumbers(webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span")));
+                testCaseWebElements.setTestCaseDescriptions(webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"hidden-vertical\"]//div[contains(concat(' ', @class, ' '), ' markdown')]")));
+                break;
+            default:
+                // "v6.5.7.1000"
+                testCaseWebElements.setTestCaseCode(webDriver.findElement(By.className("content-header-id")));
+                testCaseWebElements.setTestCaseTitle(webDriver.findElement(By.xpath("//*[@id=\"content-header\"]/div/div[4]")));
+                testCaseWebElements.setTestCaseNumbers(webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//table/tbody/tr//div/span")));
+                testCaseWebElements.setTestCaseDescriptions(webDriver.findElements(By.xpath("//*[@id=\"content-inner\"]//td[@class=\"step-content\"]/div[@class=\"markdown\"]")));
+        }
+        return testCaseWebElements;
     }
 
     public void setWebDriverBrowser(String browser) {
